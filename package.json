@@ -1,0 +1,28 @@
+{
+  "name": "typescript-template",
+  "version": "1.0.0",
+  "description": "A typescript template for my typescript projects.",
+  "main": "src/index.js",
+  "repository": "git@github.com:Anish-Shobith/typescript-template.git",
+  "author": "Anish Shobith P S <anish.shobith19@gmail.com>",
+  "engines": {
+    "node": ">=12.0.0 || >=14.0.0",
+    "npm": "Please use yarn",
+    "yarn": ">=1.22.0"
+  },
+  "scripts": {
+    "build": "rimraf ./dist && tsc -p .",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "start": "yarn lint:fix && yarn build && node dist/index.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "14.14.7",
+    "@typescript-eslint/eslint-plugin": "4.7.0",
+    "@typescript-eslint/parser": "4.7.0",
+    "eslint": "7.13.0",
+    "rimraf": "3.0.2",
+    "typescript": "4.0.5"
+  }
+}
