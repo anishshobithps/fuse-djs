@@ -44,7 +44,6 @@ jobs:
           rm -rfv out/dist/*
           echo -e "\n# Move the generated docs to the newly-checked-out repo, to be committed and pushed"
           rsync -vaI package.json out/
-          rsync -vaI README.md out/
           rsync -vaI LICENSE out/
           rsync -vaI dist/ out/dist
           echo -e "\n# Commit and push"
