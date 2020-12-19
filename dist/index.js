@@ -6,14 +6,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.FuzzySearch = void 0;
 const fuse_js_1 = __importDefault(require("fuse.js"));
 class FuzzySearch {
-    constructor(collection) {
+    constructor(collection, keys, options) {
         this.collectionArray = [...collection.values()];
-    }
-    run(query, options) {
-        const locquery = query.toLowerCase();
-        const fuzzyFuse = new fuse_js_1.default(this.collectionArray, {
+        this.fuseOptions = {
             ...options,
-        });
+            keys,
+        };
+    }
+    run(query) {
+        const locquery = query.toLowerCase();
+        const fuzzyFuse = new fuse_js_1.default(this.collectionArray, this.fuseOptions);
         return fuzzyFuse.search(locquery);
     }
 }
