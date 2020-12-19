@@ -1,9 +1,8 @@
-import Collection from '@discordjs/collection';
 import Fuse from 'fuse.js';
 // eslint-disable-next-line no-duplicate-imports
-import FuseOptions from 'fuse.js';
-
-export default class FuzzySearch<K extends string, V> {
+import type FuseOptions from 'fuse.js';
+import type Collection from '@discordjs/collection';
+export class FuzzySearch<K extends string, V> {
   private readonly collectionArray: ReadonlyArray<V>;
   public constructor(collection: Collection<K, V>) {
     this.collectionArray = [...collection.values()];
