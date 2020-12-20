@@ -7,7 +7,7 @@ exports.FuzzySearch = void 0;
 const fuse_js_1 = __importDefault(require("fuse.js"));
 class FuzzySearch {
     constructor(collection, keys, options) {
-        this.collectionArray = [...collection];
+        this.collectionArray = [...collection.values()];
         this.fuseOptions = {
             ...options,
             keys,

@@ -1,6 +1,6 @@
 {
   "name": "fuse-djs",
-  "version": "2.0.2",
+  "version": "2.1.1",
   "description": "A fuse.js implementation for discord.js can be used for eris too.",
   "main": "dist/index.js",
   "repository": "git@github.com:Anish-Shobith/fuse-djs.git",
@@ -34,6 +34,6 @@
     "fuse.js": "^6.4.3"
   },
   "peerDependencies": {
-    "eris": "^0.14.0"
+    "@discordjs/collection": "^0.1.6"
   }
 }
