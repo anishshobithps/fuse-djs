@@ -32,5 +32,8 @@
   "dependencies": {
     "@discordjs/collection": "^0.1.6",
     "fuse.js": "^6.4.3"
+  },
+  "peerDependencies": {
+    "eris": "^0.14.0"
   }
 }

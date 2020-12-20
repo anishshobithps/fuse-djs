@@ -1,15 +1,13 @@
 import Fuse from 'fuse.js';
-
-import type Collection from '@discordjs/collection';
 export class FuzzySearch<K extends string, V> {
   private readonly collectionArray: ReadonlyArray<V>;
   private readonly fuseOptions?: Fuse.IFuseOptions<V>;
   public constructor(
-    collection: Collection<K, V>,
+    collection: Iterable<V>,
     keys: string[],
     options?: Fuse.IFuseOptions<V>
   ) {
-    this.collectionArray = [...collection.values()];
+    this.collectionArray = [...collection];
     this.fuseOptions = {
       ...options,
       keys,
