@@ -29,7 +29,7 @@ const data = search.run('query to search');
 ### JavaScript:
 
 ```js
-const { JavaScript } from 'fuse-djs';
+const { FuzzySearch } from 'fuse-djs';
 
 const search = new FuzzySearch(collection, keys, options);
 
