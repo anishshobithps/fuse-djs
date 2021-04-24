@@ -53,7 +53,7 @@ const { members } = message.guild; // Collection<string, GuildMember>;
 // Some args 
 const query = args[0];
 // Invoke the constructor and pass in parameters
-const search = new FuzzySearch(members, ['displayName']); // Searchs through displayName property
+const search = new FuzzySearch(members.cache, ['displayName']); // Searchs through displayName property
 // Call the run function and pass the query to find;
 const data = search.run(query); // Data, Handle this data somehow 
 ```
