@@ -29,7 +29,7 @@ const data = search.run('query to search');
 ### JavaScript:
 
 ```js
-const { FuzzySearch } from 'fuse-djs';
+const { FuzzySearch } require('fuse-djs');
 
 const search = new FuzzySearch(collection, keys, options);
 
@@ -40,9 +40,24 @@ const data = search.run('query to search');
 
 ```ts
 collection: Collection<K, V>
-keys: string[]
+keys: string[] // These keys are keys which are supposed to be searched.
 options?: Fuse.IFuseOptions<V>
 ```
+### Examples 
+
+Finding the closest displayName.
+```ts
+import { FuzzySearch } from 'fuse-djs';
+//....
+const { members } = message.guild; // Collection<string, GuildMember>;
+// Some args 
+const query = args[0];
+// Invoke the constructor and pass in parameters
+const search = new FuzzySearch(members, ['displayName']); // Searchs through displayName property
+// Call the run function and pass the query to find;
+const data = search.run(query); // Data, Handle this data somehow 
+```
+
 
 ## Packages used:
  - Fuse.js
